@@ -8,7 +8,7 @@ struct cola
   int dato;
   struct cola *siguiente;
 };
-void agregar (struct cola **, int dato);
+void agregar (struct cola **, int);
 void mostrar (struct cola *);
 void eliminar (struct cola **cola);
 #endif
