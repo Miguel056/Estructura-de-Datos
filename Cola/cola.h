@@ -9,6 +9,7 @@ struct cola
   struct cola *siguiente;
 };
 void agregar (struct cola **, int);
+void agregar (struct cola **, int );
 void mostrar (struct cola *);
 void eliminar (struct cola **cola);
 #endif
