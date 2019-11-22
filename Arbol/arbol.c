@@ -83,9 +83,9 @@ struct arbol * buscarMayorMenores(struct arbol *raiz){
 	}
 	return buscarMenorMayores(raiz->derecho);
 }
-void eliminar(struct arbol *raiz, int dato){
+struct arbol * eliminar(struct arbol *raiz, int dato){
 	if(raiz==NULL){
-		return;
+		return NULL;
 	}
 	struct arbol *hijo;
 	struct arbol *padre;
@@ -96,16 +96,16 @@ void eliminar(struct arbol *raiz, int dato){
 	mayor=(struct arbol *)malloc(sizeof(struct arbol));
 	menor=(struct arbol *)malloc(sizeof(struct arbol));
 	if(hijo==NULL||padre==NULL||mayor==NULL||menor==NULL){
-		return;
+		return NULL;
 	}
 	if(1==buscar(raiz,dato)){
 		hijo=buscarHijo(raiz,dato);
 	}else{
-		return;
+		return NULL;
 	}
 	if(hijo->derecho==NULL && hijo->izquierdo==NULL){
 		free(hijo);
-		return;
+		return NULL;
 	}
 	if(hijo->derecho!=NULL && hijo->izquierdo==NULL){
 		menor=buscarMenorMayores(raiz->derecho);
@@ -113,11 +113,11 @@ void eliminar(struct arbol *raiz, int dato){
 		if(padre->izquierdo==hijo){
 			padre->izquierdo=menor;
 			free(hijo);
-			return;
+			return menor;
 		}else{
 			padre->derecho=menor;
 			free(hijo);
-			return;
+			return menor;
 		}
 	}
 	if(hijo->derecho==NULL && hijo->izquierdo!=NULL){
@@ -126,11 +126,11 @@ void eliminar(struct arbol *raiz, int dato){
 		if(padre->izquierdo==hijo){
 			padre->izquierdo=mayor;
 			free(hijo);
-			return;
+			return mayor;
 		}else{
 			padre->derecho=mayor;
 			free(hijo);
-			return;
+			return mayor;
 		}
 	}
 	if(hijo->derecho!=NULL && hijo->izquierdo!=NULL){
@@ -139,11 +139,11 @@ void eliminar(struct arbol *raiz, int dato){
 		if(padre->izquierdo==hijo){
 			padre->izquierdo=mayor;
 			free(hijo);
-			return;
+			return mayor;
 		}else{
 			padre->derecho=mayor;
 			free(hijo);
-			return;
+			return mayor;
 		}	
 	}
 }
