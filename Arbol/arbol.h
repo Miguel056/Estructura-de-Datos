@@ -10,6 +10,7 @@ struct arbol
 };
 struct arbol *insertar (struct arbol *, int);
 void mostrar (struct arbol *);
+int buscar (struct arbol *, int);
 struct arbol *buscarHijo (struct arbol *, int);
 struct arbol *buscarPadre (struct arbol *, struct arbol *, int);
 struct arbol *buscarMenorMayores (struct arbol *);
