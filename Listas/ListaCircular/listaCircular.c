@@ -18,9 +18,7 @@ agregar (struct listaCircular **lista, int dato)
       return;
     }
   nuevo = (struct listaCircular *) malloc (sizeof (struct listaCircular));
-  anterior = (struct listaCircular *) malloc (sizeof (struct listaCircular));
-  tmp = (struct listaCircular *) malloc (sizeof (struct listaCircular));
-  if (nuevo == NULL || anterior == NULL || tmp == NULL)
+  if (nuevo == NULL)
     {
       return;
     }
@@ -48,17 +46,7 @@ eliminar (struct listaCircular **lista, int dato)
   struct listaCircular *anterior = NULL;
   struct listaCircular *siguiente = NULL;
   struct listaCircular *act = NULL;
-  tmp = (struct listaCircular *) malloc (sizeof (struct listaCircular));
-  act = (struct listaCircular *) malloc (sizeof (struct listaCircular));
-  tmp1 = (struct listaCircular *) malloc (sizeof (struct listaCircular));
-  anterior = (struct listaCircular *) malloc (sizeof (struct listaCircular));
-  siguiente = (struct listaCircular *) malloc (sizeof (struct listaCircular));
   int aux = 0;
-  if (tmp == NULL || act == NULL || tmp1 == NULL || anterior == NULL
-      || siguiente == NULL)
-    {
-      return;
-    }
   tmp = *lista;
   tmp1 = *lista;
   while (tmp->siguiente != tmp1)
@@ -138,12 +126,6 @@ mostrar (struct listaCircular *lista)
     }
   struct listaCircular *tmp = NULL;
   struct listaCircular *tmp1 = NULL;
-  tmp = (struct listaCircular *) malloc (sizeof (struct listaCircular));
-  tmp1 = (struct listaCircular *) malloc (sizeof (struct listaCircular));
-  if (tmp == NULL || tmp1 == NULL)
-    {
-      return;
-    }
   tmp = lista;
   tmp1 = lista;
   while (tmp->siguiente != tmp1)
