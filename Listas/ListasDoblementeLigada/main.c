@@ -14,5 +14,6 @@ main (void)
   eliminar (&lista, 8);
   printf ("\n");
   mostrar (lista);
+  printf ("\n");
   return 0;
 }

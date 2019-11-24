@@ -18,11 +18,9 @@ agregar (struct listaLigadaDoble **lista, int dato)
       (*lista)->anterior = NULL;
       return;
     }
-  anterior =
-    (struct listaLigadaDoble *) malloc (sizeof (struct listaLigadaDoble));
   nuevo =
     (struct listaLigadaDoble *) malloc (sizeof (struct listaLigadaDoble));
-  if (nuevo == NULL || anterior == NULL)
+  if (nuevo == NULL)
     {
       return;
     }
@@ -46,11 +44,6 @@ mostrar (struct listaLigadaDoble *lista)
       return;
     }
   struct listaLigadaDoble *tmp = NULL;
-  tmp = (struct listaLigadaDoble *) malloc (sizeof (struct listaLigadaDoble));
-  if (tmp == NULL)
-    {
-      return;
-    }
   tmp = lista;
   while (tmp != NULL)
     {
@@ -71,12 +64,6 @@ eliminar (struct listaLigadaDoble **lista, int dato)
     {
       return;
     }
-  tmp = (struct listaLigadaDoble *) malloc (sizeof (struct listaLigadaDoble));
-  act = (struct listaLigadaDoble *) malloc (sizeof (struct listaLigadaDoble));
-  if (tmp == NULL || act == NULL)
-    {
-      return;
-    }
   tmp = *lista;
   while (tmp != NULL)
     {
@@ -93,12 +80,6 @@ eliminar (struct listaLigadaDoble **lista, int dato)
     }
   if (act == *lista)
     {
-      siguiente =
-	(struct listaLigadaDoble *) malloc (sizeof (struct listaLigadaDoble));
-      if (siguiente == NULL)
-	{
-	  return;
-	}
       siguiente = act->siguiente;
       siguiente->anterior = NULL;
       (*lista) = siguiente;
@@ -106,14 +87,6 @@ eliminar (struct listaLigadaDoble **lista, int dato)
       return;
     }
   tmp = *lista;
-  anterior =
-    (struct listaLigadaDoble *) malloc (sizeof (struct listaLigadaDoble));
-  siguiente =
-    (struct listaLigadaDoble *) malloc (sizeof (struct listaLigadaDoble));
-  if (siguiente == NULL || anterior == NULL)
-    {
-      return;
-    }
   anterior = act->anterior;
   siguiente = act->siguiente;
   anterior->siguiente = siguiente;
