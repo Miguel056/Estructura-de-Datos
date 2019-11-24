@@ -16,5 +16,6 @@ main (void)
   eliminar (&lista, 10);
   printf ("\n");
   mostrar (lista);
+  printf ("\n");
   return 0;
 }
