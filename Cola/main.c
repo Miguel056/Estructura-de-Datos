@@ -13,5 +13,6 @@ main (void)
   eliminar (&cola);
   printf ("\n");
   mostrar (cola);
+  printf ("\n");
   return 0;
 }
