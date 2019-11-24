@@ -18,5 +18,6 @@ main (void)
   agregar (&lista, 0);
   printf ("\n");
   mostrar (lista);
+  printf ("\n");
   return 0;
 }

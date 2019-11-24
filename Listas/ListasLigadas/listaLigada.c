@@ -17,9 +17,8 @@ agregar (struct listaLigada **lista, int dato)
       (*lista)->siguiente = aux2;
       return;
     }
-  anterior = (struct listaLigada *) malloc (sizeof (struct listaLigada));
   nuevo = (struct listaLigada *) malloc (sizeof (struct listaLigada));
-  if (nuevo == NULL || anterior == NULL)
+  if (nuevo == NULL)
     {
       return;
     }
@@ -42,11 +41,6 @@ mostrar (struct listaLigada *lista)
       return;
     }
   struct listaLigada *tmp = NULL;
-  tmp = (struct listaLigada *) malloc (sizeof (struct listaLigada));
-  if (tmp == NULL)
-    {
-      return;
-    }
   tmp = lista;
   while (tmp != NULL)
     {
@@ -67,12 +61,6 @@ eliminar (struct listaLigada **lista, int dato)
     {
       return;
     }
-  tmp = (struct listaLigada *) malloc (sizeof (struct listaLigada));
-  act = (struct listaLigada *) malloc (sizeof (struct listaLigada));
-  if (act == NULL || tmp == NULL)
-    {
-      return;
-    }
   tmp = *lista;
   while (tmp != NULL)
     {
@@ -89,23 +77,12 @@ eliminar (struct listaLigada **lista, int dato)
     }
   if (act == (*lista))
     {
-      siguiente = (struct listaLigada *) malloc (sizeof (struct listaLigada));
-      if (siguiente == NULL)
-	{
-	  return;
-	}
       siguiente = act->siguiente;
       (*lista) = siguiente;
       free (act);
       return;
     }
   tmp = *lista;
-  anterior = (struct listaLigada *) malloc (sizeof (struct listaLigada));
-  siguiente = (struct listaLigada *) malloc (sizeof (struct listaLigada));
-  if (siguiente == NULL || anterior == NULL)
-    {
-      return;
-    }
   while (tmp != act)
     {
       anterior = tmp;
