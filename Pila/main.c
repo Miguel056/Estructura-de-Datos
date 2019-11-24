@@ -14,4 +14,5 @@ main (void)
   printf ("\n");
   mostrar (pila);
   return 0;
+  printf ("\n");
 }

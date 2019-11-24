@@ -4,9 +4,8 @@ push (struct pila **pila, int dato)
 {
   struct pila *nuevo = NULL;
   struct pila *anterior = NULL;
-  anterior = (struct pila *) malloc (sizeof (struct pila));
   nuevo = (struct pila *) malloc (sizeof (struct pila));
-  if (nuevo == NULL || anterior == NULL)
+  if (nuevo == NULL)
     {
       return;
     }
@@ -32,11 +31,6 @@ mostrar (struct pila *pila)
       return;
     }
   struct pila *tmp = NULL;
-  tmp = (struct pila *) malloc (sizeof (struct pila));
-  if (tmp == NULL)
-    {
-      return;
-    }
   tmp = pila;
   while (tmp != NULL)
     {
@@ -51,12 +45,6 @@ pop (struct pila **pila)
   struct pila *tope = NULL;
   struct pila *siguiente = NULL;
   if (*pila == NULL)
-    {
-      return;
-    }
-  tope = (struct pila *) malloc (sizeof (struct pila));
-  siguiente = (struct pila *) malloc (sizeof (struct pila));
-  if (tope == NULL || siguiente == NULL)
     {
       return;
     }
