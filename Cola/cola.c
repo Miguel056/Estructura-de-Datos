@@ -30,6 +30,7 @@ agregar (struct cola **cola, int dato)
 void
 mostrar (struct cola *cola)
 {
+  struct cola *cola1=NULL;
   if (cola == NULL)
     {
       return;
@@ -38,8 +39,13 @@ mostrar (struct cola *cola)
   tmp = cola;
   while (tmp != NULL)
     {
-      printf ("%d ", tmp->dato);
+      agregar (&cola1, tmp->dato);
       tmp = tmp->siguiente;
+    }
+  while (cola1 != NULL)
+    {
+      printf ("%d, ", cola1->dato);
+      eliminar (&cola1);
     }
 }
 
