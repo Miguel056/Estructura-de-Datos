@@ -13,6 +13,6 @@ main (void)
   pop (&pila);
   printf ("\n");
   mostrar (pila);
-  return 0;
   printf ("\n");
+  return 0;
 }
